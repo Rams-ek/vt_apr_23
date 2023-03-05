@@ -193,6 +193,17 @@ android_app_import {
 }
 
 android_app_import {
+	name: "pasrservice",
+	owner: "motorola",
+	apk: "proprietary/vendor/app/pasrservice/pasrservice.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	soc_specific: true,
+}
+
+android_app_import {
 	name: "uimgbaservice",
 	owner: "motorola",
 	apk: "proprietary/product/app/uimgbaservice/uimgbaservice.apk",
@@ -207,6 +218,28 @@ android_app_import {
 	name: "ImsRcsService",
 	owner: "motorola",
 	apk: "proprietary/system_ext/app/ImsRcsService/ImsRcsService.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	system_ext_specific: true,
+}
+
+android_app_import {
+	name: "PerformanceMode",
+	owner: "motorola",
+	apk: "proprietary/system_ext/app/PerformanceMode/PerformanceMode.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	system_ext_specific: true,
+}
+
+android_app_import {
+	name: "PowerSaveMode",
+	owner: "motorola",
+	apk: "proprietary/system_ext/app/PowerSaveMode/PowerSaveMode.apk",
 	certificate: "platform",
 	dex_preopt: {
 		enabled: false,
@@ -237,6 +270,17 @@ android_app_import {
 }
 
 android_app_import {
+	name: "workloadclassifier",
+	owner: "motorola",
+	apk: "proprietary/system_ext/app/workloadclassifier/workloadclassifier.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	system_ext_specific: true,
+}
+
+android_app_import {
 	name: "ims",
 	owner: "motorola",
 	apk: "proprietary/system_ext/priv-app/ims/ims.apk",
@@ -258,6 +302,24 @@ android_app_import {
 	},
 	privileged: true,
 	system_ext_specific: true,
+}
+
+dex_import {
+	name: "QPerformance",
+	owner: "motorola",
+	jars: ["proprietary/system/framework/QPerformance.jar"],
+}
+
+dex_import {
+	name: "QXPerformance",
+	owner: "motorola",
+	jars: ["proprietary/system/framework/QXPerformance.jar"],
+}
+
+dex_import {
+	name: "UxPerformance",
+	owner: "motorola",
+	jars: ["proprietary/system/framework/UxPerformance.jar"],
 }
 
 dex_import {
@@ -470,6 +532,15 @@ prebuilt_etc_xml {
 	name: "vendor.qti.hardware.servicetracker@1.2-service",
 	owner: "motorola",
 	src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml",
+	filename_from_src: true,
+	sub_dir: "vintf/manifest",
+	soc_specific: true,
+}
+
+prebuilt_etc_xml {
+	name: "vendor.qti.memory.pasrmanager@1.0-service",
+	owner: "motorola",
+	src: "proprietary/vendor/etc/vintf/manifest/vendor.qti.memory.pasrmanager@1.0-service.xml",
 	filename_from_src: true,
 	sub_dir: "vintf/manifest",
 	soc_specific: true,
